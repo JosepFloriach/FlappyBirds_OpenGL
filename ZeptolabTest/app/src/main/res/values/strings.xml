@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">ZeptolabTest</string>
+    <string name="info_test1">This test is to demonstrate the available transformations. Scale, Translate, and Rotate (in local and world center axis).</string>
+    <string name="info_test2">This test show how can be applied a force to a node with a physics body component. Tap to make the square to jump.</string>
+    <string name="info_test3">This test shows several colliding nodes. Some of them change its color to show the collision. Also,when they stop colliding changes their colors as well.</string>
+    <string name="info_test4">This scene is to test render order when z-buffer is disabled. Circle is at z=250, and rectangle at z=50 (250 is frant layer and 50 back layer. Background is at z=0). But since the z-buffer is disabled and the first object to be drawn is Circle, Rectangle is in front of Circle.</string>
+    <string name="info_test5">Scene to test the movement of parenting nodes. The circle is parented to rectangle. We only move rectangle.</string>
+    <string name="main_title">ZEPTOLAB TEST</string>
+    <string name="main_b_flappy">Flappy Birds</string>
+    <string name="main_functional_tests">Functional tests</string>
+    <string name="main_b_test1">Graphics 1</string>
+    <string name="main_b_test2">Physics 1</string>
+    <string name="main_b_test3">Physics 2</string>
+    <string name="main_b_test4">Graphics 2</string>
+    <string name="main_b_test5">Scene 1</string>
+    <string name="main_generation_params">Flappy Birds map generation params</string>
+    <string name="main_param_move_speed">Scenary move speed</string>
+    <string name="main_param_jump_force">Jump Force</string>
+    <string name="main_param_max_freq">Pipe spawn max freq</string>
+    <string name="main_param_min_freq">Pipe spawn min freq</string>
+    <string name="main_param_max_gap">Pipe max gap</string>
+    <string name="main_param_min_gap">Pipe min gap</string>
+    <string name="main_param_width">Pipe width</string>
+    <string name="main_param_next_y_offset">Next pipe Y offset</string>
+
+
+</resources>

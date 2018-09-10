@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameMainActivity">
+
+    <Button
+        android:id="@+id/b_test_graphics1"
+        android:layout_width="121dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/main_b_test1"
+        app:layout_constraintEnd_toStartOf="@+id/b_test_physics1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_test_info" />
+
+    <Button
+        android:id="@+id/b_test_physics2"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/main_b_test3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toEndOf="@+id/b_test_physics1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_test_info" />
+
+    <Button
+        android:id="@+id/b_test_physics1"
+        android:layout_width="120dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/main_b_test2"
+        app:layout_constraintEnd_toStartOf="@+id/b_test_physics2"
+        app:layout_constraintStart_toEndOf="@+id/b_test_graphics1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_test_info" />
+
+    <Button
+        android:id="@+id/b_test_scene1"
+        android:layout_width="121dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/main_b_test5"
+        app:layout_constraintStart_toEndOf="@+id/b_test_graphics2"
+        app:layout_constraintTop_toBottomOf="@+id/b_test_physics1" />
+
+    <Button
+        android:id="@+id/b_test_graphics2"
+        android:layout_width="121dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/main_b_test4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_test_graphics1" />
+
+    <Button
+        android:id="@+id/b_flappy_birds"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/main_b_flappy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_info" />
+
+    <TextView
+        android:id="@+id/text_info"
+        android:layout_width="350dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:autoText="false"
+        android:gravity="center_horizontal"
+        android:text="@string/main_title"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/surface_view" />
+
+    <TextView
+        android:id="@+id/tv_test_info"
+        android:layout_width="359dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/main_functional_tests"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_flappy_birds" />
+
+    <TextView
+        android:id="@+id/tv_flappy_bird_config"
+        android:layout_width="364dp"
+        android:layout_height="23dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/main_generation_params"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_test_physics1" />
+
+    <TextView
+        android:id="@+id/tv_player_jump_force"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/main_param_jump_force"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_move_speed" />
+
+    <TextView
+        android:id="@+id/tv_move_speed"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/main_param_move_speed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_flappy_bird_config" />
+
+    <TextView
+        android:id="@+id/tv_pipe_spawn_max_freq"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/main_param_max_freq"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_player_jump_force" />
+
+    <TextView
+        android:id="@+id/tv_pipe_spawn_min_freq"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/main_param_min_freq"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pipe_spawn_max_freq" />
+
+    <TextView
+        android:id="@+id/tv_pipe_gap_max_distance"
+        android:layout_width="133dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/main_param_max_gap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pipe_spawn_min_freq" />
+
+    <TextView
+        android:id="@+id/tv_pipe_gap_min_distance"
+        android:layout_width="134dp"
+        android:layout_height="21dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/main_param_min_gap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pipe_gap_max_distance" />
+
+    <TextView
+        android:id="@+id/tv_pipe_width"
+        android:layout_width="134dp"
+        android:layout_height="18dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/main_param_width"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pipe_gap_min_distance" />
+
+    <TextView
+        android:id="@+id/tv_next_pipe_y_offset"
+        android:layout_width="134dp"
+        android:layout_height="18dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/main_param_next_y_offset"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pipe_width" />
+
+    <SeekBar
+        android:id="@+id/sb_move_speed"
+        android:layout_width="149dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_move_speed_value"
+        app:layout_constraintStart_toEndOf="@+id/tv_move_speed"
+        app:layout_constraintTop_toBottomOf="@+id/tv_flappy_bird_config" />
+
+    <SeekBar
+        android:id="@+id/sb_player_jump_force"
+        android:layout_width="149dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_player_jump_force_value"
+        app:layout_constraintStart_toEndOf="@+id/tv_move_speed"
+        app:layout_constraintTop_toBottomOf="@+id/sb_move_speed" />
+
+    <SeekBar
+        android:id="@+id/sb_pipe_spawn_max_freq"
+        android:layout_width="149dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pipe_spawn_max_freq_value"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_pipe_spawn_max_freq"
+        app:layout_constraintTop_toBottomOf="@+id/sb_player_jump_force" />
+
+    <SeekBar
+        android:id="@+id/sb_pipe_spawn_min_freq"
+        android:layout_width="149dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pipe_spawn_min_freq_value"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/tv_pipe_spawn_min_freq"
+        app:layout_constraintTop_toBottomOf="@+id/sb_pipe_spawn_max_freq" />
+
+    <SeekBar
+        android:id="@+id/sb_pipe_gap_max_distance"
+        android:layout_width="149dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_pipe_gap_max_distance"
+        app:layout_constraintTop_toBottomOf="@+id/sb_pipe_spawn_min_freq" />
+
+    <SeekBar
+        android:id="@+id/sb_pipe_gap_min_distance"
+        android:layout_width="149dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_pipe_gap_min_distance"
+        app:layout_constraintTop_toBottomOf="@+id/sb_pipe_gap_max_distance" />
+
+    <SeekBar
+        android:id="@+id/sb_pipe_width"
+        android:layout_width="149dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_pipe_gap_min_distance"
+        app:layout_constraintTop_toBottomOf="@+id/sb_pipe_gap_min_distance" />
+
+    <SeekBar
+        android:id="@+id/sb_next_pipe_y_offset"
+        android:layout_width="149dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_next_pipe_y_offset"
+        app:layout_constraintTop_toBottomOf="@+id/sb_pipe_width" />
+
+    <TextView
+        android:id="@+id/tv_move_speed_value"
+        android:layout_width="77dp"
+        android:layout_height="21dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sb_move_speed"
+        app:layout_constraintTop_toBottomOf="@+id/tv_flappy_bird_config" />
+
+    <TextView
+        android:id="@+id/tv_player_jump_force_value"
+        android:layout_width="77dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sb_player_jump_force"
+        app:layout_constraintTop_toBottomOf="@+id/tv_move_speed_value" />
+
+    <TextView
+        android:id="@+id/tv_pipe_spawn_max_freq_value"
+        android:layout_width="77dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sb_pipe_spawn_max_freq"
+        app:layout_constraintTop_toBottomOf="@+id/tv_player_jump_force_value" />
+
+    <TextView
+        android:id="@+id/tv_pipe_spawn_min_freq_value"
+        android:layout_width="77dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/sb_pipe_spawn_min_freq"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pipe_spawn_max_freq_value" />
+
+    <TextView
+        android:id="@+id/tv_pipe_gap_max_distance_value"
+        android:layout_width="77dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sb_pipe_gap_max_distance"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pipe_spawn_min_freq_value" />
+
+    <TextView
+        android:id="@+id/tv_pipe_gap_min_distance_value"
+        android:layout_width="77dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sb_pipe_gap_min_distance"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pipe_gap_max_distance_value" />
+
+    <TextView
+        android:id="@+id/tv_pipe_width_value"
+        android:layout_width="77dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sb_pipe_width"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pipe_gap_min_distance_value" />
+
+    <TextView
+        android:id="@+id/tv_next_pipe_y_offset_value"
+        android:layout_width="77dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sb_next_pipe_y_offset"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pipe_width_value" />
+
+</android.support.constraint.ConstraintLayout>
