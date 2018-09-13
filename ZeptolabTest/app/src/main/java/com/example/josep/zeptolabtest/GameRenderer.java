@@ -1,6 +1,5 @@
 package com.example.josep.zeptolabtest;
 
-import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.opengl.GLSurfaceView;
 import android.util.DisplayMetrics;
