@@ -21,7 +21,7 @@ const std::string NODE_NAME_ROOF            = "Roof";
 SceneFlappyBirds::SceneFlappyBirds(utils::Width aDisplayWidth, utils::Height aDisplayHeight)
     : Scene(aDisplayWidth, aDisplayHeight)
     , mScenary(this)
-    , mPlayer()
+    , mPlayer(nullptr)
 {
 }
 
@@ -67,24 +67,21 @@ void SceneFlappyBirds::CreateBackground()
 void SceneFlappyBirds::CreatePlayer()
 {
     auto Color = utils::Color(0.0f, 0.7f, 0.0f);
-    auto Position = utils::Vector3<>(-350.f, 0.f, 100.f);
+    auto Position = utils::Vector3<>(-350.f, 0.f, 500.f);
     auto Radius = utils::Radius(50.f);
     auto Quality = 30;
-    auto& Node = CreateNode(NODE_NAME_PLAYER);
-    Node.AddComponent<scene::RendererCircle>(std::move(
+    mPlayer = dynamic_cast<Player*>(&CreateNode<Player>(NODE_NAME_PLAYER));
+    mPlayer->AddComponent<scene::RendererCircle>(std::move(
             GetComponentFactory().CreateComponentRendererCircle(
                     Radius,
                     Quality)));
-    Node.AddComponent<scene::PhysicsBody>(std::move(
+    mPlayer->AddComponent<scene::PhysicsBody>(std::move(
             GetComponentFactory().CreateComponentPhysicsBody()));
-    Node.AddComponent<scene::ColliderCircle>(std::move(
+    mPlayer->AddComponent<scene::ColliderCircle>(std::move(
             GetComponentFactory().CreateComponentColliderCircle(
                     Radius)));
-    Node.GetComponent<scene::RendererCircle>()->SetColor(Color);
-    Node.SetPosition(Position);
-
-    mPlayer.SetPlayerNode(&Node);
-
+    mPlayer->GetComponent<scene::RendererCircle>()->SetColor(Color);
+    mPlayer->SetPosition(Position);
 }
 
 void SceneFlappyBirds::CreateRoof()
@@ -127,16 +124,16 @@ void SceneFlappyBirds::CreateFloor()
 
 void SceneFlappyBirds::OnTouch(float aX, float aY)
 {
-    if (!mPlayer.IsDead())
+    if (!mPlayer->IsDead())
     {
-        mPlayer.Awake();
-        mPlayer.Jump();
+        mPlayer->Awake();
+        mPlayer->Jump();
     }
 }
 
 void SceneFlappyBirds::Update(double aDt)
 {
-    if (!mPlayer.IsDead() && mPlayer.IsAwake())
+    if (!mPlayer->IsDead() && mPlayer->IsAwake())
     {
         mScenary.Update(aDt);
     }
@@ -152,7 +149,7 @@ void SceneFlappyBirds::OnCollision(const events::Event &aEvent)
     if (FirstNode->GetNodeName() == NODE_NAME_PLAYER ||
         SecondNode->GetNodeName() == NODE_NAME_PLAYER)
     {
-        mPlayer.Kill();
+        mPlayer->Kill();
     }
 
 }

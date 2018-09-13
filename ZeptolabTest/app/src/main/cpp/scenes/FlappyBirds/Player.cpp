@@ -10,42 +10,35 @@ float Player::JUMP_FORCE = 1600.f;
 
 const utils::Color DEAD_COLOR = utils::Color(1.0f, 0.f, 0.f);
 
-Player::Player()
-    : mPlayerNode(nullptr)
+Player::Player(const std::string aPlayerName)
+    : SceneNode(aPlayerName)
     , mIsAwake(false)
     , mIsDead(false)
-
 {
 }
 
 void Player::Jump()
 {
-    if (mPlayerNode)
+    scene::PhysicsBody* PhysicsComponent = GetComponent<scene::PhysicsBody>();
+    if (PhysicsComponent)
     {
-        scene::PhysicsBody* PhysicsComponent = mPlayerNode->GetComponent<scene::PhysicsBody>();
-        if (PhysicsComponent)
-        {
-            PhysicsComponent->SetApplyGravity(true);
-            PhysicsComponent->AddForce(utils::Vector3<>(0.f, JUMP_FORCE, 0.f));
-        }
+        PhysicsComponent->SetApplyGravity(true);
+        PhysicsComponent->AddForce(utils::Vector3<>(0.f, JUMP_FORCE, 0.f));
     }
 }
 
 void Player::Kill()
 {
-    if (mPlayerNode)
+    auto PhysicsComponent = GetComponent<scene::PhysicsBody>();
+    auto RendererComponent = GetComponent<scene::RendererCircle>();
+    if (PhysicsComponent)
     {
-        auto PhysicsComponent = mPlayerNode->GetComponent<scene::PhysicsBody>();
-        auto RendererComponent = mPlayerNode->GetComponent<scene::RendererCircle>();
-        if (PhysicsComponent)
-        {
-            PhysicsComponent->Stop();
-        }
+        PhysicsComponent->Stop();
+    }
 
-        if (RendererComponent)
-        {
-            RendererComponent->SetColor(DEAD_COLOR);
-        }
+    if (RendererComponent)
+    {
+        RendererComponent->SetColor(DEAD_COLOR);
     }
 
     mIsDead = true;
@@ -64,9 +57,4 @@ bool Player::IsAwake() const
 bool Player::IsDead() const
 {
     return mIsDead;
-}
-
-void Player::SetPlayerNode(scene::SceneNode *aPlayerNode)
-{
-    mPlayerNode = aPlayerNode;
 }

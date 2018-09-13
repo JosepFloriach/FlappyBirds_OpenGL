@@ -7,6 +7,8 @@
 #include "scenes/FlappyBirds/Player.h"
 #include "engine/common/Utils.h"
 #include <android/log.h>
+#include <android/asset_manager_jni.h>
+#include <android/asset_manager.h>
 
 extern "C"
 {
@@ -25,10 +27,10 @@ extern "C"
         utils::Width Width((unsigned) aDisplayWidth);
         utils::Height Height((unsigned) aDisplayHeight);
 
-        __android_log_print(ANDROID_LOG_DEBUG,"LOG_TAG", "Creating new game...");
+        __android_log_print(ANDROID_LOG_DEBUG,"ZEPTOLAB_TEST_GAME_CREATION", "Creating new game...");
         mGame.reset();
         mGame = std::make_unique<Game>(sSceneName, Width, Height);
-        __android_log_print(ANDROID_LOG_DEBUG,"LOG_TAG", "Game created...");
+        __android_log_print(ANDROID_LOG_DEBUG,"ZEPTOLAB_TEST_GAME_CREATION", "Game created...");
         env->ReleaseStringUTFChars(aSceneName, cSceneName);
     }
 

@@ -83,11 +83,16 @@ private:
      */
     void CreateFloor();
 
+    /**
+     * Create scenary node. The Scenary will handle pipes building.
+     */
+    void CreateScenary();
+
     // Scenary object. It will handle all scenary/map building.
     Scenary mScenary;
 
-     // Player object. It will handle if the player is alive, awake, etc.
-    Player mPlayer;
+     // Player node. This node will handle if the player is alive, awaken... etc.
+    Player* mPlayer;
 };
 
 

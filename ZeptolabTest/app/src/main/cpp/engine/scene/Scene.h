@@ -6,6 +6,7 @@
 #define ZEPTOLABTEST_SCENE_H
 
 #include <vector>
+#include <android/log.h>
 
 #include "FactoryComponent.h"
 
@@ -59,6 +60,23 @@ namespace scene
          * @return Reference to the node just created.
          */
         SceneNode& CreateNode(const std::string& aName);
+
+        /**
+         * Creates a node with a dynamic type passed by parameter. This type must be a SceneNode
+         * derived class. This is useful to create custom scene nodes.
+         * @tparam T Type of the Node to be created. This type must be a SceneNode derived class.
+         * @param aName Name of the node to be created.
+         * @return Reference to SceneNode (the node just created).
+         */
+        template <typename T>
+        SceneNode& CreateNode(const std::string& aName)
+        {
+            static_assert(std::is_base_of<SceneNode, T>::value, "Type must be a subclass of SceneNode");
+            std::unique_ptr<SceneNode> Node = std::make_unique<T>(aName);
+            mSceneNodes.push_back(std::move(Node));
+            __android_log_print(ANDROID_LOG_DEBUG,"ZEPTOLAB_TEST_SCENE", "Adding node %s", aName.c_str());
+            return *mSceneNodes.back();
+        }
 
         /**
          * Removes a node specified by its name.

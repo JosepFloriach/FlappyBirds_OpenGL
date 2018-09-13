@@ -24,7 +24,6 @@ float Scenary::PIPE_WIDTH               = 300.f;
 // can't achieve the next pipe gap because it's to far in Y axis.
 float Scenary::NEXT_PIPE_Y_OFFSET       = 700.f;
 
-
 // Max Y position where a pipe can be spawned.
 const float PIPE_MAX_Y                  = 400.f;
 // Min Y position where a pipe can be spawned.

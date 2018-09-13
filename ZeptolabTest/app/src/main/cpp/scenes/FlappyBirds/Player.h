@@ -7,7 +7,7 @@
 
 #include "../../engine/scene/SceneNode.h"
 
-class Player
+class Player : public scene::SceneNode
 {
 public:
 
@@ -17,7 +17,7 @@ public:
     /**
      * Constructor
      */
-    Player();
+    explicit Player(const std::string aPlayerName);
 
     /**
      * Makes the player jump
@@ -47,15 +47,7 @@ public:
      */
     void Kill();
 
-    /**
-     * Sets the player node. If this node is not set, the player will not jump.
-     * @param aPlayerNode Pointer to the player node.
-     */
-    void SetPlayerNode(scene::SceneNode* aPlayerNode);
-
 private:
-    // Pointer to the player node.
-    scene::SceneNode* mPlayerNode;
     // Is the player awake?
     bool mIsAwake;
     // Is the player dead?
