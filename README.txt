@@ -1,9 +1,9 @@
-======================================================================================================================================
-=================================== ZEPTOLAB APPLY TEST by JOSEP FLORIACH VENTOSINOS==================================================
-======================================================================================================================================
+===========================================================================================
+=================================== ZEPTOLAB APPLY TEST by JOSEP FLORIACH VENTOSINOS=======
+===========================================================================================
 This document intention is to explain the decisions I took while I was implementing the Flappy Birds test to apply to Zeptolab position.
 
-======================================================= INTRODUCTION ==============================================================
+======================================================= INTRODUCTION ======================
 In first place, and as you will see, I developed a (very) minimalistic engine. This engine can draw graphics, build a scene, and deal with physics.
 
 I decided to implement my own engine due the fact that even if it was a very simple game, the truth is that I found myself designing several diferent classes for different purposes. And I thought that taking advantage of this, why do not implement a minimalistic engine? In this way the build of flappy birds game would be so much easy and straight forward. Besides, I would test each funcionality more comfortable. The engine is pretty much based in Unity workflow. An entity-component system.
@@ -13,7 +13,7 @@ There is a known bug in which in lower resolution devices the main menu interfac
 When you open the App, you will see several buttons and sliders. The main button is Flappy Birds under the title ZEPTOLAB TEST. This button will took you to the actual game of Flappy Birds. Below that, you will see several buttons that will take you to different scenes. These scenes are built to perform some "unit testing" through the different functionalities of the engine. Each of this scene will test a specific functionality (i.e. Draw geometric shapes, or another one to test the collisions between them). Finally, below this test scenes, you will notice different sliders. These sliders are to setup the Flappy Birds game parameters. I made this in this way to help myself to 
 find the optimal parameters in which I had a satisfactory feeling playing the game.
 
-======================================================= TECHNICAL KEY POINTS =========================================================
+======================================================= TECHNICAL KEY POINTS ================
 The rules for the test were that it had to be implemented in OpenGL 2.0 without the help of any kind engine, and from NDK using a simple java interface. There are some programming techniques I used, that I think they are worth to be explained.
 
 - Pointer to implementation (PIMPL idiom): 	I used this programming technique in some places in the code. I think it's a great techinque to avoid long-compiling times, and to hide implementation data from the client. Moreover, I used in classes which I think had the potential to be improved or to grown in size.
@@ -28,7 +28,7 @@ The rules for the test were that it had to be implemented in OpenGL 2.0 without 
 
 - WHERE IS THE FLAPPY GAME SCORE???: The main problem with the score is that it has to be implemented in one of the following ways: with OpenGL, or with Android TextView widget into the activity. The problem with the last one is that it has an overhead due the communication between NDK and Java, and the score has to be updated in every frame (maybe with event polling would reduce this overhead). I haven't implemented the OpenGL way due the lack of time.
 											
-======================================================= POTENTIAL IMPROVEMENTS  =========================================================
+======================================================= POTENTIAL IMPROVEMENTS  ==========
 I tried to develop the engine in a flexible way, so it could be easy to implement new functionalities and improvements. For lack of time there are so many things I've decided to do for the future. I'll try to explain some of the potential improvements.
 
 - Fix the Main Game Activity resolution: In some devices with lower resolutions, the main game Activity is not shown correctly. I must fix it.
@@ -51,7 +51,7 @@ I tried to develop the engine in a flexible way, so it could be easy to implemen
 
 - Add more touch events: Right now it's just the touch-down event. The engine would be responsive to pinch-touch, to finger-move...
 
-======================================================= INTO THE FUTURE!!!!  ============================================================
+======================================================= INTO THE FUTURE!!!!  =========
 The following things are improvements to the long term.
 
 - Visual tool to design scenes: And they are loaded into the engine through XML's files generated by the own tool.
